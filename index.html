@@ -48,7 +48,8 @@
   <body class="font-body text-neutral-foreground bg-neutral">
     <!-- Header Navigation -->
     <header
-      class="fixed top-0 left-0 right-0 z-50 bg-neutral/95 backdrop-blur-sm shadow-sm"
+      class="absolute top-0 left-0 right-0 z-50 bg-transparent transition-all duration-300"
+      id="navbar"
     >
       <nav
         class="max-w-screen-xl mx-auto px-8 py-4 flex items-center justify-between min-h-[64px]"
@@ -189,168 +190,171 @@
       <!-- Hero Section -->
       <section
         id="home"
-        class="relative h-screen flex items-center justify-center overflow-hidden"
+        class="relative h-screen flex items-center overflow-hidden"
       >
+        <!-- Image Carousel Background -->
         <div class="absolute inset-0 w-full h-full">
-          <video
-            aria-label="cleaning team working"
-            src="https://c.animaapp.com/mjj7wz5h29rtzS/img/ai_1.mp4"
-            poster="https://c.animaapp.com/mjj7wz5h29rtzS/img/ai_1-poster.png"
-            class="w-full h-full object-cover"
-            autoplay=""
-            loop=""
-            muted=""
-            playsinline=""
-          ></video>
+          <div class="carousel-container w-full h-full">
+            <div class="carousel-slide active">
+              <img
+                src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1920&q=80"
+                alt="Professional cleaning service"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="carousel-slide">
+              <img
+                src="https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?w=1920&q=80"
+                alt="Home cleaning"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="carousel-slide">
+              <img
+                src="https://images.unsplash.com/photo-1585421514738-01798e348b17?w=1920&q=80"
+                alt="Office cleaning"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
           <div
-            class="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/0 to-black/80"
+            class="pointer-events-none absolute inset-0 bg-gradient-to-r from-black/70 to-black/30"
           ></div>
         </div>
 
-        <div class="relative z-10 text-center px-8 max-w-4xl mx-auto">
-          <h1
-            class="text-4xl md:text-5xl lg:text-6xl font-sans font-bold mb-6 text-primary-foreground"
-          >
-            Professional <span class="aurora-text">Cleaning Services</span> Across the UK
-          </h1>
-          <h2
-            class="text-xl md:text-2xl mb-8 text-primary-foreground font-body"
-          >
-            Creating cleaner spaces you'll love. Expert cleaning services tailored to residential and commercial needs throughout the United Kingdom.
-          </h2>
-          <a
-            href="#booking"
-            class="inline-block bg-primary text-primary-foreground px-8 py-4 rounded font-normal text-base hover:bg-[hsl(210,75%,55%)] transition-all duration-200 active:scale-[0.97] mb-8"
-            >Get a Free Quote</a
-          >
+        <div class="relative z-10 px-8 max-w-screen-xl mx-auto w-full">
+          <div class="max-w-2xl">
+            <p class="text-lg md:text-xl mb-4 text-primary-foreground font-body">
+              Your Trusted Cleaning Experts For Homes & Businesses
+            </p>
+            <h1
+              class="text-4xl md:text-5xl lg:text-6xl font-sans font-bold mb-6 text-primary-foreground leading-tight"
+            >
+              Zims Clean – Professional <span class="aurora-text">Cleaning Services</span> Across The UK
+            </h1>
+            <p
+              class="text-lg md:text-xl mb-8 text-primary-foreground font-body max-w-xl"
+            >
+              A clean space is a happy place! At Zims Clean, we provide top-tier cleaning solutions tailored for residential and commercial properties across the UK.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 mb-8">
+              <a
+                href="#booking"
+                class="inline-block bg-primary text-primary-foreground px-8 py-4 rounded font-semibold text-base hover:bg-[hsl(210,75%,55%)] transition-all duration-200 active:scale-[0.97] text-center"
+                >Get a Free Quote</a
+              >
+              <a
+                href="#services"
+                class="inline-block bg-transparent text-white px-8 py-4 rounded font-semibold text-base hover:bg-white/10 transition-all duration-200 active:scale-[0.97] text-center"
+                >View Our Services</a
+              >
+            </div>
 
-          <div
-            class="flex flex-wrap justify-center gap-6 text-primary-foreground font-body text-sm md:text-base"
-          >
-            <div class="flex items-center gap-2">
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                <path
-                  fill-rule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clip-rule="evenodd"
-                ></path>
-              </svg>
-              <span>Fully Insured</span>
-            </div>
-            <div class="flex items-center gap-2">
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                <path
-                  fill-rule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clip-rule="evenodd"
-                ></path>
-              </svg>
-              <span>Satisfaction Guaranteed</span>
-            </div>
-            <div class="flex items-center gap-2">
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                <path
-                  fill-rule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clip-rule="evenodd"
-                ></path>
-              </svg>
-              <span>Easy Booking</span>
+            <div
+              class="flex flex-wrap gap-6 text-primary-foreground font-body text-sm md:text-base"
+            >
+              <div class="flex items-center gap-2">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+                <span>Fully Insured</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+                <span>Satisfaction Guaranteed</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+                <span>Easy Booking</span>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Trust Badges Section -->
+      <!-- Get A Free Estimate Section -->
       <section class="py-20 px-8 bg-tertiary">
         <div class="max-w-screen-xl mx-auto">
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <a
-              href="#services"
-              class="bg-neutral p-8 rounded shadow-sm hover:scale-105 transition-transform duration-200 cursor-pointer"
-            >
-              <div class="flex flex-col items-center text-center">
-                <svg
-                  class="w-12 h-12 text-primary mb-4"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                  ></path>
-                </svg>
-                <h3
-                  class="text-xl font-sans font-semibold mb-2 text-neutral-foreground"
-                >
-                  Quality Guaranteed
-                </h3>
-                <p class="text-gray-600 font-body">
-                  Every job meets our rigorous standards of excellence
-                </p>
-              </div>
-            </a>
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <!-- Text Content -->
+            <div>
+              <h2 class="text-3xl md:text-4xl font-sans font-bold mb-6 text-neutral-foreground">
+                Get A Free Cleaning Estimate Today!
+              </h2>
+              <p class="text-lg text-gray-600 font-body mb-8 leading-relaxed">
+                With years of experience, we specialize in high-quality cleaning services for homes, offices, and commercial spaces. We use advanced cleaning techniques and eco-friendly products to ensure a fresh, healthy, and welcoming environment for our clients.
+              </p>
 
-            <a
-              href="#booking"
-              class="bg-neutral p-8 rounded shadow-sm hover:scale-105 transition-transform duration-200 cursor-pointer"
-            >
-              <div class="flex flex-col items-center text-center">
-                <svg
-                  class="w-12 h-12 text-secondary mb-4"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                  ></path>
-                </svg>
-                <h3
-                  class="text-xl font-sans font-semibold mb-2 text-neutral-foreground"
-                >
-                  Flexible Scheduling
-                </h3>
-                <p class="text-gray-600 font-body">
-                  Book at your convenience, available 7 days a week
-                </p>
-              </div>
-            </a>
+              <ul class="space-y-6 mb-12">
+                <li class="flex items-center gap-4">
+                  <svg class="w-7 h-7 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="10" fill="currentColor"/>
+                    <path d="M9 12l2 2 4-4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                  </svg>
+                  <span class="text-gray-700 font-body text-base">Professional & Reliable Staff</span>
+                </li>
+                <li class="flex items-center gap-4">
+                  <svg class="w-7 h-7 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="10" fill="currentColor"/>
+                    <path d="M9 12l2 2 4-4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                  </svg>
+                  <span class="text-gray-700 font-body text-base">Eco-Friendly Cleaning Products</span>
+                </li>
+                <li class="flex items-center gap-4">
+                  <svg class="w-7 h-7 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="10" fill="currentColor"/>
+                    <path d="M9 12l2 2 4-4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                  </svg>
+                  <span class="text-gray-700 font-body text-base">Affordable & Transparent Pricing</span>
+                </li>
+                <li class="flex items-center gap-4">
+                  <svg class="w-7 h-7 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="10" fill="currentColor"/>
+                    <path d="M9 12l2 2 4-4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                  </svg>
+                  <span class="text-gray-700 font-body text-base">100% Customer Satisfaction Guarantee</span>
+                </li>
+              </ul>
 
-            <a
-              href="#faq"
-              class="bg-neutral p-8 rounded shadow-sm hover:scale-105 transition-transform duration-200 cursor-pointer"
-            >
-              <div class="flex flex-col items-center text-center">
-                <svg
-                  class="w-12 h-12 text-primary mb-4"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
-                  ></path>
+              <div class="flex items-center gap-4 mb-3">
+                <svg class="w-8 h-8 text-secondary flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
                 </svg>
-                <h3
-                  class="text-xl font-sans font-semibold mb-2 text-neutral-foreground"
-                >
-                  Fully Insured
-                </h3>
-                <p class="text-gray-600 font-body">
-                  Complete peace of mind with full insurance coverage
-                </p>
+                <div>
+                  <p class="text-sm text-gray-600 font-body mb-1">Request A Free Estimate</p>
+                  <a href="tel:+447342335386" class="text-2xl md:text-3xl font-bold text-secondary hover:text-[hsl(110,45%,55%)] transition-colors">
+                    +44 7342 335386
+                  </a>
+                </div>
               </div>
-            </a>
+            </div>
+
+            <!-- Image Placeholder -->
+            <div class="relative h-[500px] rounded overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&q=80"
+                alt="Professional cleaning service"
+                class="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -369,83 +373,102 @@
             </p>
           </div>
 
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- House Cleaning Card -->
-            <div
-              class="bg-neutral border border-gray-200 rounded overflow-hidden hover:scale-105 transition-transform duration-200"
-            >
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Commercial Cleaning Card -->
+            <div class="service-card relative h-[450px] rounded-lg overflow-hidden group cursor-pointer">
               <img
-                src="https://c.animaapp.com/mjj7wz5h29rtzS/img/ai_2.png"
-                alt="house cleaning woman"
-                class="w-full h-64 object-cover"
+                src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&q=80"
+                alt="Commercial cleaning"
+                class="w-full h-full object-cover"
                 loading="lazy"
               />
-              <div class="p-6">
-                <h3
-                  class="text-2xl font-sans font-semibold mb-3 text-neutral-foreground"
-                >
-                  Residential Cleaning
-                </h3>
-                <p class="text-gray-600 font-body mb-4">
-                  Professional home cleaning services to keep your property spotless and fresh. From regular maintenance to one-off deep cleans, we ensure your home is a sanctuary.
-                </p>
+              <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"></div>
+              <div class="absolute inset-0 p-8 flex flex-col justify-between text-white">
+                <div>
+                  <span class="text-white text-xl font-bold mb-4 block">01.</span>
+                  <h3 class="text-3xl md:text-4xl font-sans font-bold mb-4">Commercial Cleaning</h3>
+                  <p class="text-base md:text-lg font-body leading-relaxed">
+                    We keep offices, retail stores, and corporate spaces pristine, ensuring a professional and healthy work environment.
+                  </p>
+                </div>
                 <a
                   href="#booking"
-                  class="inline-block bg-primary text-primary-foreground px-6 py-3 rounded font-normal text-base hover:bg-[hsl(210,75%,55%)] transition-all duration-200 active:scale-[0.97]"
+                  class="inline-block bg-primary text-primary-foreground px-6 py-3 rounded font-semibold text-base hover:bg-[hsl(210,75%,55%)] transition-all duration-200 self-start"
                   >Learn More</a
                 >
               </div>
             </div>
 
-            <!-- Office Cleaning Card -->
-            <div
-              class="bg-neutral border border-gray-200 rounded overflow-hidden hover:scale-105 transition-transform duration-200"
-            >
+            <!-- Domestic Cleaning Card -->
+            <div class="service-card relative h-[450px] rounded-lg overflow-hidden group cursor-pointer">
               <img
-                src="https://c.animaapp.com/mjj7wz5h29rtzS/img/ai_3.png"
-                alt="office cleaning man"
-                class="w-full h-64 object-cover"
+                src="https://images.unsplash.com/photo-1556911220-bff31c812dba?w=800&q=80"
+                alt="Domestic cleaning"
+                class="w-full h-full object-cover"
                 loading="lazy"
               />
-              <div class="p-6">
-                <h3
-                  class="text-2xl font-sans font-semibold mb-3 text-neutral-foreground"
-                >
-                  Commercial Cleaning
-                </h3>
-                <p class="text-gray-600 font-body mb-4">
-                  Maintain a pristine workplace with our commercial cleaning services. Flexible scheduling to suit your business operations, ensuring a professional environment for staff and clients.
-                </p>
+              <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"></div>
+              <div class="absolute inset-0 p-8 flex flex-col justify-between text-white">
+                <div>
+                  <span class="text-white text-xl font-bold mb-4 block">02.</span>
+                  <h3 class="text-3xl md:text-4xl font-sans font-bold mb-4">Domestic Cleaning</h3>
+                  <p class="text-base md:text-lg font-body leading-relaxed">
+                    From regular housekeeping to deep cleaning, we ensure your home stays fresh and inviting.
+                  </p>
+                </div>
                 <a
                   href="#booking"
-                  class="inline-block bg-primary text-primary-foreground px-6 py-3 rounded font-normal text-base hover:bg-[hsl(210,75%,55%)] transition-all duration-200 active:scale-[0.97]"
+                  class="inline-block bg-primary text-primary-foreground px-6 py-3 rounded font-semibold text-base hover:bg-[hsl(210,75%,55%)] transition-all duration-200 self-start"
+                  >Learn More</a
+                >
+              </div>
+            </div>
+
+            <!-- End Of Tenancy Cleaning Card -->
+            <div class="service-card relative h-[450px] rounded-lg overflow-hidden group cursor-pointer">
+              <img
+                src="https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?w=800&q=80"
+                alt="End of tenancy cleaning"
+                class="w-full h-full object-cover"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"></div>
+              <div class="absolute inset-0 p-8 flex flex-col justify-between text-white">
+                <div>
+                  <span class="text-white text-xl font-bold mb-4 block">03.</span>
+                  <h3 class="text-3xl md:text-4xl font-sans font-bold mb-4">End Of Tenancy Cleaning</h3>
+                  <p class="text-base md:text-lg font-body leading-relaxed">
+                    Moving out? We guarantee a spotless property, helping you secure your deposit refund hassle-free.
+                  </p>
+                </div>
+                <a
+                  href="#booking"
+                  class="inline-block bg-primary text-primary-foreground px-6 py-3 rounded font-semibold text-base hover:bg-[hsl(210,75%,55%)] transition-all duration-200 self-start"
                   >Learn More</a
                 >
               </div>
             </div>
 
             <!-- Deep Cleaning Card -->
-            <div
-              class="bg-neutral border border-gray-200 rounded overflow-hidden hover:scale-105 transition-transform duration-200"
-            >
+            <div class="service-card relative h-[450px] rounded-lg overflow-hidden group cursor-pointer">
               <img
-                src="https://c.animaapp.com/mjj7wz5h29rtzS/img/ai_4.png"
-                alt="deep cleaning technician"
-                class="w-full h-64 object-cover"
+                src="https://images.unsplash.com/photo-1585421514738-01798e348b17?w=800&q=80"
+                alt="Deep cleaning"
+                class="w-full h-full object-cover"
                 loading="lazy"
               />
-              <div class="p-6">
-                <h3
-                  class="text-2xl font-sans font-semibold mb-3 text-neutral-foreground"
-                >
-                  Specialist Deep Cleaning
-                </h3>
-                <p class="text-gray-600 font-body mb-4">
-                  Intensive cleaning for those hard-to-reach areas. Ideal for spring cleaning, end of tenancy, moving house, or preparing for special occasions.
-                </p>
+              <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"></div>
+              <div class="absolute inset-0 p-8 flex flex-col justify-between text-white">
+                <div>
+                  <span class="text-white text-xl font-bold mb-4 block">04.</span>
+                  <h3 class="text-3xl md:text-4xl font-sans font-bold mb-4">Deep Cleaning</h3>
+                  <p class="text-base md:text-lg font-body leading-relaxed">
+                    For a more intensive clean, our deep cleaning service eliminates built-up grime, dust, and bacteria.
+                  </p>
+                </div>
                 <a
                   href="#booking"
-                  class="inline-block bg-primary text-primary-foreground px-6 py-3 rounded font-normal text-base hover:bg-[hsl(210,75%,55%)] transition-all duration-200 active:scale-[0.97]"
+                  class="inline-block bg-primary text-primary-foreground px-6 py-3 rounded font-semibold text-base hover:bg-[hsl(210,75%,55%)] transition-all duration-200 self-start"
                   >Learn More</a
                 >
               </div>
@@ -789,6 +812,30 @@
     </footer>
 
     <script>
+      // Navbar stays transparent always
+      const navbar = document.getElementById('navbar');
+
+      // Image Carousel
+      const slides = document.querySelectorAll('.carousel-slide');
+      let currentSlide = 0;
+
+      function showSlide(index) {
+        slides.forEach((slide, i) => {
+          slide.classList.remove('active');
+          if (i === index) {
+            slide.classList.add('active');
+          }
+        });
+      }
+
+      function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+      }
+
+      // Auto-advance carousel every 5 seconds
+      setInterval(nextSlide, 5000);
+
       // Mobile menu toggle
       const mobileMenuBtn = document.getElementById('mobile-menu-btn');
       const mobileMenu = document.getElementById('mobile-menu');
