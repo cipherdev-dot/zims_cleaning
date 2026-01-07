@@ -10,6 +10,29 @@
     Zims Cleaning Services Limited | Professional Cleaning Services Across the UK
   </title>
 
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: 'hsl(210, 75%, 45%)',
+            secondary: 'hsl(110, 45%, 45%)',
+            tertiary: 'hsl(204, 100%, 95%)',
+            neutral: 'hsl(0, 0%, 100%)',
+            'primary-foreground': 'hsl(0, 0%, 100%)',
+            'secondary-foreground': 'hsl(0, 0%, 100%)',
+            'neutral-foreground': 'hsl(210, 25%, 15%)',
+          },
+          fontFamily: {
+            sans: ['Poppins', 'sans-serif'],
+            body: ['Open Sans', 'sans-serif'],
+            mono: ['Fira Code', 'monospace'],
+          },
+        }
+      }
+    }
+  </script>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&family=Fira+Code:wght@400;500&display=swap');
 
@@ -26,10 +49,7 @@
     }
 
     .aurora-text {
-      background: linear-gradient(90deg,
-          hsl(210, 75%, 45%),
-          hsl(200, 85%, 50%),
-          hsl(210, 75%, 45%));
+      background: linear-gradient(90deg, hsl(210, 75%, 45%), hsl(200, 85%, 50%), hsl(210, 75%, 45%));
       background-size: 200% auto;
       -webkit-background-clip: text;
       background-clip: text;
@@ -37,48 +57,30 @@
       animation: aurora 3s ease-in-out infinite;
     }
 
-    html,
-    body {
-      color: hsl(210, 25%, 15%);
-    }
-
     .custom-padding {
-      padding-left: 15px;
-      padding-right: 15px;
+      padding-left: 14px;
+      padding-right: 14px;
     }
 
-    /* Heading sizes matching coming.html */
-    h1 {
-      font-size: 30px !important;
-      font-size: 2rem !important;
+    /* Carousel Styles */
+    .carousel-container {
+      position: relative;
     }
 
-    h2 {
-      font-size: 20px !important;
-      font-size: 1.50rem !important;
+    .carousel-slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
     }
 
-    h3 {
-      font-size: 28px !important;
-      font-size: 1.75rem !important;
-    }
-
-    h4 {
-      font-size: 20px !important;
-      font-size: 1.25rem !important;
-    }
-
-    h5 {
-      font-size: 14px !important;
-      font-size: 0.875rem !important;
-    }
-
-    h6 {
-      font-size: 12px !important;
-      font-size: 0.75rem !important;
+    .carousel-slide.active {
+      opacity: 1;
     }
   </style>
-  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body class="font-body text-neutral-foreground bg-neutral">
@@ -168,25 +170,27 @@
 
   <main>
     <!-- Hero Section -->
-    <section id="home" class="relative h-screen flex items-center overflow-hidden">
+    <section id="home" class="relative flex items-end overflow-hidden pt-20 min-h-[550px]">
+
+
       <!-- Image Carousel Background -->
       <div class="absolute inset-0 w-full h-full">
         <div class="carousel-container w-full h-full">
           <div class="carousel-slide active">
-            <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1920&q=80"
-              alt="Professional cleaning service" class="w-full h-full object-cover" />
+            <img src="assets/image1.jpeg" alt="Professional cleaning service" class="w-full h-full object-cover" />
           </div>
           <div class="carousel-slide">
-            <img src="https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?w=1920&q=80" alt="Home cleaning"
-              class="w-full h-full object-cover" />
+            <img src="assets/image2.jpeg" alt="Home cleaning" class="w-full h-full object-cover" />
           </div>
           <div class="carousel-slide">
-            <img src="https://images.unsplash.com/photo-1585421514738-01798e348b17?w=1920&q=80" alt="Office cleaning"
-              class="w-full h-full object-cover" />
+            <img src="assets/image3.jpeg" alt="Office cleaning" class="w-full h-full object-cover" />
           </div>
         </div>
-        <div class="pointer-events-none absolute inset-0 bg-gradient-to-r from-black/70 to-black/30"></div>
+
+        <!-- Dark overlay -->
+        <div class="absolute inset-0 bg-black/70 pointer-events-none"></div>
       </div>
+
 
       <div class="relative z-10 custom-padding max-w-screen-xl mx-auto w-full">
         <div class="max-w-2xl">
@@ -198,8 +202,8 @@
           <h1 class="text-3xl md:text-4xl lg:text-5xl font-sans font-bold mb-6 text-primary-foreground leading-tight">
             Zims Clean – Professional <span class="aurora-text">Cleaning Services</span> Across The UK
           </h1>
-          <p class="text-sm md:text-base mb-8 text-primary-foreground font-body max-w-xl">
-            A clean space is a happy place! At <span class="font-bold">Zims Clean</span>, we provide top-tier cleaning
+          <p class="text-sm md:text-base mb-10 text-primary-foreground font-bold max-w-xl">
+            A clean space is a happy place! At <span class="font-[500]">Zims Clean</span>, we provide top-tier cleaning
             solutions tailored for
             residential and commercial properties across the UK.
           </p>
@@ -208,7 +212,7 @@
 
           <div class="flex flex-col sm:flex-row gap-4 mb-8">
             <a href="#booking"
-              class="inline-block bg-primary text-primary-foreground px-8 py-4 font-semibold text-base hover:bg-[hsl(210,75%,55%)] transition-all duration-200 active:scale-[0.97] text-center rounded">
+              class="inline-block bg-primary text-primary-foreground px-8 py-4 font-semibold text-base hover:bg-[hsl(210,75%,55%)] transition-all duration-200 active:scale-[0.97] text-center rounded-lg">
               Get a Free Quote
             </a>
 
@@ -219,101 +223,88 @@
               Our Services</a>
           </div>
 
-          <div class="flex flex-wrap gap-6 text-primary-foreground font-body text-sm md:text-base">
-            <div class="flex items-center gap-2">
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clip-rule="evenodd"></path>
-              </svg>
-              <span>Fully Insured</span>
-            </div>
-            <div class="flex items-center gap-2">
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clip-rule="evenodd"></path>
-              </svg>
-              <span>Satisfaction Guaranteed</span>
-            </div>
-            <div class="flex items-center gap-2">
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clip-rule="evenodd"></path>
-              </svg>
-              <span>Easy Booking</span>
-            </div>
-          </div>
+
         </div>
+      </div>
       </div>
     </section>
 
     <!-- Get A Free Estimate Section -->
-    <section class="py-20 custom-padding bg-tertiary">
+    <section class="py-20 pt-20 custom-padding bg-tertiary">
       <div class="max-w-screen-xl mx-auto">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <!-- Text Content -->
           <div class="text-left">
-            <h2 class="text-3xl md:text-4xl font-sans font-bold mb-6 text-neutral-foreground">
+            <h2 class=" md:text-[40px] text-[20px] font-sans font-bold mb-6 text-neutral-foreground">
               Get A Free Cleaning Estimate Today!
             </h2>
-            <p class="text-sm text-gray-600 font-body font-bold mb-8 leading-relaxed">
+            <p class="text-[14px] text-black-600 font-body font-bold mb-[55px] leading-relaxed">
               With years of experience, we specialize in high-quality cleaning services for homes, offices, and
               commercial spaces. We use advanced cleaning techniques and eco-friendly products to ensure a fresh,
               healthy, and welcoming environment for our clients.
             </p>
 
-            <ul class="mb-12">
+            <ul class="mb-14 text-sm text-gray-500 font-body font-medium [&_p]:m-0">
+
               <li class="flex items-center gap-3 mb-2">
-                <svg class="w-6 h-6 text-green-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-5 h-5 text-gray-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
                 </svg>
-                <span class="text-gray-700 font-body text-sm">Professional & Reliable Staff</span>
+                <p>Professional & Reliable Staff</p>
               </li>
 
               <li class="flex items-center gap-3 mb-2">
-                <svg class="w-6 h-6 text-green-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-5 h-5 text-gray-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
                 </svg>
-                <span class="text-gray-700 font-body text-sm">Eco-Friendly Cleaning Products</span>
+                <p>Eco-Friendly Cleaning Products</p>
               </li>
 
               <li class="flex items-center gap-3 mb-2">
-                <svg class="w-6 h-6 text-green-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-5 h-5 text-gray-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
                 </svg>
-                <span class="text-gray-700 font-body text-sm">Affordable & Transparent Pricing</span>
+                <p>Affordable & Transparent Pricing</p>
               </li>
 
               <li class="flex items-center gap-3">
-                <svg class="w-6 h-6 text-green-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-5 h-5 text-gray-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
                 </svg>
-                <span class="text-gray-700 font-body text-sm">100% Customer Satisfaction Guarantee</span>
+                <p>100% Customer Satisfaction Guarantee</p>
               </li>
+
             </ul>
 
+
+
+
             <div class="flex items-center gap-4 mb-3">
-              <svg class="w-8 h-8 text-secondary flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+              <!-- Phone icon -->
+              <svg class="w-8 h-8 text-[hsl(210,75%,45%)] flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
                 <path
                   d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z" />
               </svg>
+
               <div>
                 <p class="text-sm text-gray-600 font-body mb-1">Request A Free Estimate</p>
                 <a href="tel:+447342335386"
-                  class="text-2xl md:text-3xl font-bold text-secondary hover:text-[hsl(110,45%,55%)] transition-colors">
+                  class="text-2xl md:text-3xl font-bold text-[hsl(210,75%,45%)] hover:text-[hsl(210,75%,35%)] transition-colors">
                   +44 7342 335386
                 </a>
               </div>
             </div>
+
+
           </div>
 
 
-          <!-- Image Placeholder -->
+          <!-- Video Placeholder -->
           <div class="relative h-[500px] rounded overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&q=80"
-              alt="Professional cleaning service" class="w-full h-full object-cover" loading="lazy" />
+            <video class="w-full h-full object-cover" muted loop playsinline preload="metadata">
+              <source src="videos/my-video.mp4.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
           </div>
         </div>
       </div>
@@ -751,7 +742,22 @@
 
     window.addEventListener('scroll', highlightNav);
     highlightNav(); // Call on load
+
+    // Video autoplay on scroll
+    const video = document.querySelector('video');
+    if (video) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            video.play();
+          } else {
+            video.pause();
+          }
+        });
+      }, { threshold: 0.5 });
+      observer.observe(video);
+    }
   </script>
 </body>
 
-</html>
+</html> if (window.scrollY >= sectionTop - 100) {
